@@ -34,17 +34,9 @@ void PrintMatrix(int[,] array)
 
 void CheckPos(int[,] matrix, int[] coordinates)
 {
-    for (int i = 1; i < matrix.GetLength(0); i++)
-    {
-        for (int j = 1; j < matrix.GetLength(1); j++)
-        {
-            if (i == coordinates[0] && j == coordinates[1])
-            {
-                Console.WriteLine($"Строка - {coordinates[0]} столбец - {coordinates[1]} -> {matrix[i, j]}");
-                return;
-            }
-        }
-    }
+    if(coordinates[0] < matrix.GetLength(0) && coordinates[1] < matrix.GetLength(1))
+    Console.WriteLine($"Строка - {coordinates[0]} столбец - {coordinates[1]} -> {matrix[coordinates[0], coordinates[1]]}");
+    else
     Console.WriteLine($"Строка - {coordinates[0]} столбец - {coordinates[1]} -> такого числа в массиве нет");
 }
 
